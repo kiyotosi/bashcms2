@@ -23,5 +23,6 @@ deploy	GITHUBが更新された際に、GITHUBから実行される。
 	・binを/var/www/bashcms2にコピー(rsyncによる同期)する。
 	・fetchをfetch.乱数.cgiにコピーする。
 
+# git Command
 # git hub CLI
 gh
