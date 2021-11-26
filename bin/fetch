@@ -1,7 +1,7 @@
 #!/bin/bash -euvx
 source "$(dirname $0)/conf"
-#exec 2> "$logdir/$(basename $0).$(date +%Y%m%d_%H%M%S).$$"
-[ -n "${CONTENT_LENGTH}" ] && dd bs=${CONTENT_LENGTH} > /dev/null
+exec 2> "$logdir/$(basename $0).$(date +%Y%m%d_%H%M%S).$$"
+#[ -n "${CONTENT_LENGTH}" ] && dd bs=${CONTENT_LENGTH} > /dev/null
 
 echo -e 'Content-type: text/html\n\n'
 
@@ -23,7 +23,6 @@ while read d ; do
 	    -v mf="$datadir/$d/modified_time" \
 		'NR==1{print > mf}END{print > cf}'
 done
-
 
 ### DELETE DELETED ARTICLES ###
 cd "$datadir"
