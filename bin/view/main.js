@@ -39,7 +39,7 @@ function fullSearch(word){
 		document.getElementById("full-search").innerHTML = httpReq.responseText;
 		document.body.style.cursor = "default";
 	}
-	var url = "/full_search.cgi?word=" + encodeURIComponennt(word);
+	var url = "/full_search.cgi?word=" + encodeURIComponent(word);
 	httpReq.open("GET",url,true);
 	httpReq.send(null);
 	document.body.style.cursor = "wait";
